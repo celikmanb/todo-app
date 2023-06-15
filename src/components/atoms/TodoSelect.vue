@@ -36,10 +36,10 @@ export default {
     }
   },
   watch: {
-    /* getTodoItem(val) {
+    getTodoItem(val) {
       this.inputData =  val[this.label.toLowerCase()]
-    }, */
-    getEditMode(val) {
+    },
+    /* getEditMode(val) {
       
       if (val) {
         let item = this.getTodoItem
@@ -47,7 +47,7 @@ export default {
       }else {
         this.inputData = null
       }
-    }
+    } */
   },
   methods: {
     changeSelect(val) {

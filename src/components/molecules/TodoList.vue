@@ -40,15 +40,7 @@ export default {
   },
   computed: {
     getDataList() {
-      return this.$store.state.todoList
-    }
-  },
-  watch: {
-    getDataList: {
-      handler(val) {
-        console.log("todo list", val)
-      },
-      deep: true,
+      return this.$store.state.todoList;
     }
   },
   methods: {

@@ -56,6 +56,7 @@
           <v-btn
             color="blue-darken-1"
             variant="text"
+            v-show="!getEditMode"
             @click="saveData"
           >
             Save
@@ -127,7 +128,6 @@ export default {
       this.selectedTodo[val.label] = val.value
     },
     saveData() {
-      console.log('edit mode', this.$store.state.isEdit)
       if(!this.$store.state.isEdit) {
         this.selectedTodo.id = uuidv4()
         this.setTodoItem(this.selectedTodo)
@@ -135,6 +135,7 @@ export default {
         this.setEmptySelectedTodoItem()
         this.closeDialog()
       }else {
+        // else sil
         this.setEditTodoList(this.selectedTodo)
         this.setEditMode(false)
         this.getEmptyData()
@@ -144,6 +145,12 @@ export default {
 
     },
     closeDialog() {
+      if(this.getEditMode){
+        this.setEditTodoList(this.selectedTodo)
+        this.setEditMode(false)
+        this.getEmptyData()
+        this.setEmptySelectedTod
+      }
       this.$emit('closeDialog', false)
     },
     getEmptyData() {

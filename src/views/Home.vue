@@ -39,10 +39,12 @@ import TodoList from '../components/molecules/TodoList.vue'
     },
     methods: {
       ...mapActions([
-        "setEditMode"
+        "setEditMode",
+        "setEmptySelectedTodoItem"
       ]),
       addTodo() {
         this.setEditMode(false)
+        this.setEmptySelectedTodoItem()
         this.showDialog = true
       },
       closeDialog(val) {

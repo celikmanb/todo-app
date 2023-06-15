@@ -18,7 +18,6 @@ export default new Vuex.Store({
   },
   mutations: {
     setSelectedTodoItem(state, val) {
-      console.log("STATE SELECT")
       state.todoItem = val
     },
     setEmptySelectedTodoItem(state) {
@@ -31,11 +30,9 @@ export default new Vuex.Store({
       }
     },
     setTodoItem(state, val) {
-      console.log("STATE SET")
       state.todoList.push(val)
     },
     setEditTodoList(state, val) {
-      console.log("STATE EDİT")
       let todoExist = state.todoList.findIndex(item => item.id == val.id)
       if (todoExist == -1) {
         return "Not Found"
