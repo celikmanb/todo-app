@@ -134,15 +134,7 @@ export default {
         this.getEmptyData()
         this.setEmptySelectedTodoItem()
         this.closeDialog()
-      }else {
-        // else sil
-        this.setEditTodoList(this.selectedTodo)
-        this.setEditMode(false)
-        this.getEmptyData()
-        this.setEmptySelectedTodoItem()
-        this.closeDialog()    
       }
-
     },
     closeDialog() {
       if(this.getEditMode){
